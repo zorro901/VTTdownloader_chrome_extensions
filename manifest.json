@@ -1,0 +1,32 @@
+﻿{
+  "manifest_version": 3,
+  "name": "VTT downloader",
+  "version": "1.0",
+  "description": "VTT download from udemy",
+  "icons": {
+    "32": "favicon-32x32.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.udemy.com/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://www.udemy.com/*"
+  ],
+  "permissions": [
+    "tabs"
+  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "injected.js"
+    ],
+    "matches": [
+      "https://www.udemy.com/*"
+    ]
+  }]
+}
